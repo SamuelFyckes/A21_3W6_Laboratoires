@@ -13,5 +13,7 @@ namespace ZombieParty.Models.Data
 
     }
 
+    public DbSet<Zombie> Zombie { get; set; }
+    public DbSet<ZombieType> ZombieType { get; set; }
   }
 }
