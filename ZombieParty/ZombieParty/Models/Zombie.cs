@@ -23,10 +23,20 @@ namespace ZombieParty.Models
 
     [Display(Name = "Zombie Type")]
     // FACULTATIF on peut formellement identifier le champ lien
+    [ForeignKey("ZombieType")]
+    // Un Zombie DOIT avoir un ZombieType, donc int Ne peut PAS être null
     public int ZombieTypeId { get; set; }
-    [ForeignKey("ZombieTypeId")]
+
     //OBLIGATOIRE Pour la relation 1 à plusieurs avec ZombieType
     public virtual ZombieType ZombieType { get; set; }
 
+    // FACULTATIF on peut formellement identifier le champ lien
+    [ForeignKey("ForceLevel")]
+    // Un Zombie PEUT ou non avoir un ForceLevel, donc int peut être null
+    public int? ForceLevelId { get; set; }
+
+    //Propriété de navigation
+    //OBLIGATOIRE Pour la relation 1 à plusieurs avec ForceLevel
+    public virtual ForceLevel ForceLevel { get; set; }
   }
 }

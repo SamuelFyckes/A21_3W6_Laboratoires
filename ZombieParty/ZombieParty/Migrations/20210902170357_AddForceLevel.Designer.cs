@@ -3,15 +3,17 @@ using System;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 using ZombieParty.Models.Data;
 
 namespace ZombieParty.Migrations
 {
     [DbContext(typeof(ZombiePartyDbContext))]
-    partial class ZombiePartyDbContextModelSnapshot : ModelSnapshot
+    [Migration("20210902170357_AddForceLevel")]
+    partial class AddForceLevel
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -106,7 +108,7 @@ namespace ZombieParty.Migrations
                         .HasForeignKey("ForceLevelId");
 
                     b.HasOne("ZombieParty.Models.ZombieType", "ZombieType")
-                        .WithMany("Zombies")
+                        .WithMany()
                         .HasForeignKey("ZombieTypeId")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
@@ -117,11 +119,6 @@ namespace ZombieParty.Migrations
                 });
 
             modelBuilder.Entity("ZombieParty.Models.ForceLevel", b =>
-                {
-                    b.Navigation("Zombies");
-                });
-
-            modelBuilder.Entity("ZombieParty.Models.ZombieType", b =>
                 {
                     b.Navigation("Zombies");
                 });
