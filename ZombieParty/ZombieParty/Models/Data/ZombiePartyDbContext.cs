@@ -19,6 +19,9 @@ namespace ZombieParty.Models.Data
     public DbSet<ForceLevel> ForceLevel { get; set; }
     public DbSet<ZombieHuntingLog> ZombieHuntingLog { get; set; }
     public DbSet<Hunter> Hunter { get; set; }
+    public DbSet<Weapon> Weapon { get; set; }
+    public DbSet<Category> Category { get; set; }
+    public DbSet<WeaponHunter> WeaponHunter { get; set; }
 
     protected override void OnModelCreating(ModelBuilder modelBuilder)
     {
@@ -26,6 +29,8 @@ namespace ZombieParty.Models.Data
       // ZombieHuntingLog: clé composée (composite key)
       modelBuilder.Entity<ZombieHuntingLog>().HasKey(zh => new { zh.Zombie_Id, zh.HuntingLog_Id });
 
+      // WeaponHunter: clé composée (composite key)
+      modelBuilder.Entity<WeaponHunter>().HasKey(wh => new { wh.Weapon_Id, wh.Hunter_Id });
     }
   }
 }
