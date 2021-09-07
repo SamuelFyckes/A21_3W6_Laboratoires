@@ -38,5 +38,9 @@ namespace ZombieParty.Models
     //Propriété de navigation
     //OBLIGATOIRE Pour la relation 1 à plusieurs avec ForceLevel
     public virtual ForceLevel ForceLevel { get; set; }
+
+    // Propriété de navigation vers zombieHuntingLog
+    //OBLIGATOIRE Pour la relation 1 à plusieurs avec zombieHuntingLog
+    public ICollection<ZombieHuntingLog> zombieHuntingLogs { get; set; }
   }
 }
