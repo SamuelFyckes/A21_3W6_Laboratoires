@@ -18,6 +18,7 @@ namespace ZombieParty.Models.Data
     public DbSet<HuntingLog> HuntingLog { get; set; }
     public DbSet<ForceLevel> ForceLevel { get; set; }
     public DbSet<ZombieHuntingLog> ZombieHuntingLog { get; set; }
+    public DbSet<Hunter> Hunter { get; set; }
 
     protected override void OnModelCreating(ModelBuilder modelBuilder)
     {

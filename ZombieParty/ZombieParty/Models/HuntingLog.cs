@@ -16,6 +16,11 @@ namespace ZombieParty.Models
     //OBLIGATOIRE Pour la relation 1 à plusieurs avec zombieHuntingLog
     public ICollection<ZombieHuntingLog> zombieHuntingLogs { get; set; }
 
-   
+    // FACULTATIF on peut formellement identifier le champ lien
+    [ForeignKey("Hunter")]
+    // Un Hunter PEUT avoir un ou plusieurs HuntingLog
+    public int HunterId { get; set; }
+    //OBLIGATOIRE Pour la relation 1 à plusieurs avec Hunter
+    public virtual Hunter Hunter { get; set; }
   }
 }
