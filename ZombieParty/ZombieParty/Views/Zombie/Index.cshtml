@@ -1,14 +1,65 @@
-﻿<div class="container p-3">
-  <div class="row">
-    @foreach (var item in this.ViewBag.MaListe)
-    {
-      <div href="#" class="card  border m-3 text-center bg-warning" style="width: 20rem; background-image: url('/images/imagesLayout/Fond.png'); ">
-        <div class="card-body  text-warning">
-          <h3 class="card-title"> @item.Name </h3>
-          <h5> @item.Point </h5>
-        </div>
-      </div>
+﻿@model IEnumerable<ZombieParty.Models.Zombie>
 
-    }
+<div class="container p-3">
+  <div class="row pt-4">
+    <div class="col-6">
+      <h2 class="text-primary">Zombie List</h2>
+    </div>
+    <div class="col-6 text-right">
+      <a asp-action="Upsert" class="btn btn-primary">
+        <i class="fas fa-plus"></i> &nbsp; Create New Zombie
+      </a>
+    </div>
   </div>
+
+  <br /><br />
+
+  @if (Model.Count() > 0)
+  {
+    <table class="table table-bordered table-striped" style="width:100%">
+      <thead>
+        <tr>
+          <th>
+            Zombie Name
+          </th>
+          <th>
+            Point
+          </th>
+          <th>
+            Type
+          </th>
+          <th>
+            Force Level
+          </th>
+          <th></th>
+        </tr>
+      </thead>
+      <tbody>
+        @foreach (var obj in Model)
+        {
+          <tr>
+            <td width="50%">@obj.Name</td>
+            <td width="30%">@obj.Point</td>
+            <td width="20%">@obj.ZombieType.TypeName</td>
+            <td width="20%">@obj.ForceLevel.ForceLevelNiv</td>
+            <td class="text-center">
+              <div class="w-75 btn-group" role="group">
+                <a asp-route-Id="@obj.Id" asp-action="Upsert" class="btn btn-primary mx-2">
+                  <i class="fas fa-edit"></i>
+                </a>
+                <a asp-route-Id="@obj.Id" asp-action="Delete" class="btn btn-danger mx-2">
+                  <i class="fas fa-trash-alt"></i>
+                </a>
+              </div>
+            </td>
+          </tr>
+        }
+      </tbody>
+    </table>
+  }
+  else
+  {
+    <p>No product exists.</p>
+  }
+
 </div>

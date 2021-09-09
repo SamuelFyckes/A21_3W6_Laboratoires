@@ -4,27 +4,24 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 using ZombieParty.Models;
+using ZombieParty.Models.Data;
+using Microsoft.AspNetCore.Mvc.Rendering;
+using Microsoft.EntityFrameworkCore;
 
 namespace ZombieParty.Controllers
 {
   public class ZombieController : Controller
   {
+    private readonly ZombiePartyDbContext _db;
+
+    public ZombieController(ZombiePartyDbContext db)
+    {
+      _db = db;
+    }
+
     public IActionResult Index()
     {
-      //Enlever la liste liée au ViewBag: éventuellement remplacée par la BD
-      // Vous pouvez supprimer
-      //this.ViewBag.MaListe = new List<Zombie>()
-      //{
-      //  new Zombie(){Name= "LeChuck", Point=5, Type="Fiction",},
-      //  new Zombie(){Name= "Lenore", Point=4, Type="Fiction",},
-      //  new Zombie(){Name= "Draugr", Point=2, Type="Légendaire",},
-      //  new Zombie(){Name= "Ragamuffin", Point=5, Type="Légendaire",},
-      //  new Zombie(){Name= "Taxidermy", Point=1, Type="Légendaire",},
-      //  new Zombie(){Name= "chien de l'enfer", Point=7, Type="Fiction",},
-      //  new Zombie(){Name= "Avogadro", Point=9, Type="Fiction",}
-      //};
-
-
+     
       return View();
     }
   }
