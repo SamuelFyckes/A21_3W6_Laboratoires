@@ -21,6 +21,7 @@ namespace ZombieParty_DataAccess.Repository
        Category = new CategoryRepository(_db);
        ForceLevel = new ForceLevelRepository(_db);
        Hunter = new HunterRepository(_db);
+       HuntingLog = new HuntingLogRepository(_db);
     }
 
     // Creer une variable de type Interface du Repo. pour chaque repo.
@@ -29,6 +30,7 @@ namespace ZombieParty_DataAccess.Repository
     public ICategoryRepository Category { get; private set; }
     public IForceLevelRepository ForceLevel { get; private set; }
     public IHunterRepository Hunter { get; private set; }
+    public IHuntingLogRepository HuntingLog { get; private set; }
 
     public void Dispose()
     {
