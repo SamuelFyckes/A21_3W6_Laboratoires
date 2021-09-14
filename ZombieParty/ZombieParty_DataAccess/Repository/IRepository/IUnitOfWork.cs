@@ -14,6 +14,7 @@ namespace ZombieParty_DataAccess.Repository.IRepository
     IHunterRepository Hunter { get; }
     IHuntingLogRepository HuntingLog { get; }
     IWeaponRepository Weapon { get; }
+    IZombieHuntingLogRepository ZombieHuntingLog { get; }
 
     void Save();
   }

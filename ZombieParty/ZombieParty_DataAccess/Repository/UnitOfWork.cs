@@ -23,6 +23,7 @@ namespace ZombieParty_DataAccess.Repository
        Hunter = new HunterRepository(_db);
        HuntingLog = new HuntingLogRepository(_db);
        Weapon = new WeaponRepository(_db);
+      ZombieHuntingLog = new ZombieHuntingLogRepository(_db);
     }
 
     // Creer une variable de type Interface du Repo. pour chaque repo.
@@ -33,6 +34,7 @@ namespace ZombieParty_DataAccess.Repository
     public IHunterRepository Hunter { get; private set; }
     public IHuntingLogRepository HuntingLog { get; private set; }
     public IWeaponRepository Weapon { get; private set; }
+    public IZombieHuntingLogRepository ZombieHuntingLog { get; private set; }
 
     public void Dispose()
     {
