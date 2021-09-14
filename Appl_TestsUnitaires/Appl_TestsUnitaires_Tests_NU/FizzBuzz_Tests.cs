@@ -3,7 +3,7 @@ using Appl_TestsUnitaires;
 
 namespace Appl_TestsUnitaires_Tests_NU
 {
-  public class Tests
+  public class FizzBuzz_Tests
   {
     
     [Test]
