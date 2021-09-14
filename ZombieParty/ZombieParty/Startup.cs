@@ -10,6 +10,8 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 using ZombieParty_DataAccess.Data;
+using ZombieParty_DataAccess.Repository;
+using ZombieParty_DataAccess.Repository.IRepository;
 
 namespace ZombieParty
 {
@@ -28,6 +30,8 @@ namespace ZombieParty
       services.AddDbContext<ZombiePartyDbContext>(options =>
 options.UseSqlServer(
   Configuration.GetConnectionString("DefaultConnection")));
+
+      services.AddScoped<IUnitOfWork, UnitOfWork>();
 
       services.AddControllersWithViews();
     }
