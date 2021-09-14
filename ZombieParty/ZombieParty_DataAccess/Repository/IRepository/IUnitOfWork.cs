@@ -13,6 +13,7 @@ namespace ZombieParty_DataAccess.Repository.IRepository
     IForceLevelRepository ForceLevel { get; }
     IHunterRepository Hunter { get; }
     IHuntingLogRepository HuntingLog { get; }
+    IWeaponRepository Weapon { get; }
 
     void Save();
   }
