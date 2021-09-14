@@ -11,6 +11,7 @@ namespace ZombieParty_DataAccess.Repository.IRepository
     IZombieRepository Zombie { get; }
     ICategoryRepository Category { get; }
     IForceLevelRepository ForceLevel { get; }
+    IHunterRepository Hunter { get; }
 
     void Save();
   }
