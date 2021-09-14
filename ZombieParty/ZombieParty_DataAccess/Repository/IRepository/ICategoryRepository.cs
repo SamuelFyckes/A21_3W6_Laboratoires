@@ -3,14 +3,12 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using ZombieParty_Models;
 
 namespace ZombieParty_DataAccess.Repository.IRepository
 {
-  public interface IUnitOfWork : IDisposable
+  public interface ICategoryRepository : IRepository<Category>
   {
-    IZombieRepository Zombie { get; }
-    ICategoryRepository Category { get; }
-
-    void Save();
+    void Update(Category category);
   }
 }

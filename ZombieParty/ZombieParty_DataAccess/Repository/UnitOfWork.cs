@@ -17,15 +17,14 @@ namespace ZombieParty_DataAccess.Repository
       _db = db;
       // Initialiser chaque repo.passant de DbContext en parametre
       //NomClasse = new NomClasseRepository(_db);
-
-      Zombie = new ZombieRepository(_db);
-    
+       Zombie = new ZombieRepository(_db);
+       Category = new CategoryRepository(_db);
     }
 
     // Creer une variable de type Interface du Repo. pour chaque repo.
     // INomClasseRepository NomClasse { get; private set; }
     public IZombieRepository Zombie { get; private set; }
-
+    public ICategoryRepository Category { get; private set; }
 
     public void Dispose()
     {
