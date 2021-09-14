@@ -1,6 +1,6 @@
 using System;
 
-namespace ZombieParty.Models
+namespace ZombieParty_Models
 {
   public class ErrorViewModel
   {

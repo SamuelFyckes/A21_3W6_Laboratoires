@@ -9,7 +9,7 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
-using ZombieParty.Models.Data;
+using ZombieParty_DataAccess.Data;
 
 namespace ZombieParty
 {

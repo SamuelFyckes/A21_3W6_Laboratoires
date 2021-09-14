@@ -5,7 +5,7 @@ using System.ComponentModel.DataAnnotations;
 using System.Linq;
 using System.Threading.Tasks;
 
-namespace ZombieParty.Models
+namespace ZombieParty_Models
 {
   public class ZombieType
   {

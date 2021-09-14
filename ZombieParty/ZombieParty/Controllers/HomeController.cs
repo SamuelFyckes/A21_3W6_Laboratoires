@@ -5,7 +5,7 @@ using System.Collections.Generic;
 using System.Diagnostics;
 using System.Linq;
 using System.Threading.Tasks;
-using ZombieParty.Models;
+using ZombieParty_Models;
 
 namespace ZombieParty.Controllers
 {

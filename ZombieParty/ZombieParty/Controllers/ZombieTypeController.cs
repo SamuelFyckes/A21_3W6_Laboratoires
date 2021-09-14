@@ -3,7 +3,7 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
-using ZombieParty.Models;
+using ZombieParty_Models;
 
 namespace ZombieParty.Controllers
 {

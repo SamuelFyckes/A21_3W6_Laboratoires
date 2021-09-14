@@ -3,8 +3,9 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
+using ZombieParty_Models;
 
-namespace ZombieParty.Models.Data
+namespace ZombieParty_DataAccess.Data
 {
   public class ZombiePartyDbContext: DbContext
   {
