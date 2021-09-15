@@ -7,22 +7,24 @@ using ZombieParty_Models;
 using ZombieParty_DataAccess.Data;
 using Microsoft.AspNetCore.Mvc.Rendering;
 using Microsoft.EntityFrameworkCore;
+using ZombieParty_DataAccess.Repository.IRepository;
 
 namespace ZombieParty.Controllers
 {
   public class ZombieController : Controller
   {
-    private readonly ZombiePartyDbContext _db;
+    private readonly IUnitOfWork _unitOfWork;
 
-    public ZombieController(ZombiePartyDbContext db)
+    public ZombieController(IUnitOfWork unitOfWork)
     {
-      _db = db;
+      _unitOfWork = unitOfWork;
     }
 
     public IActionResult Index()
     {
-     
-      return View();
+      IEnumerable<Zombie> ZombieList = _unitOfWork.Zombie.GetAll();
+
+      return View(ZombieList);
     }
   }
 }
