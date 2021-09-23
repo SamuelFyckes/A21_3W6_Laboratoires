@@ -18,6 +18,8 @@ using Microsoft.Extensions.Options;
 using AppDependencyInject_Lab.Utility.AppSettingsClasses;
 using AppDependencyInject_Lab.Service;
 using AppDependencyInject_Lab.Service.LifeTimeExample;
+using System.Configuration;
+using FluentAssertions.Common;
 
 namespace AppDependencyInject_Lab
 {
@@ -43,12 +45,13 @@ namespace AppDependencyInject_Lab
       #endregion
 
       #region Insérez les références à l'ensemble des services ThirdParty ici Version Séparément
-
-
+      //services.Configure<WazeForecastSettings>(Configuration.GetSection("WazeForecast"));
+      //services.Configure<StripeSettings>(Configuration.GetSection("Stripe"));
+      //services.Configure<TwilioSettings>(Configuration.GetSection("Twilio"));
       #endregion
 
       #region Insérez les références à l'ensemble des services Thirdparty ici Version Groupés
-
+      services.AddAppSettingsConfig(Configuration).AddAllServices();
       #endregion
 
       #region Injection des trois version du Middleware
