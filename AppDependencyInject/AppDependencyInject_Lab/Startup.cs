@@ -39,7 +39,7 @@ namespace AppDependencyInject_Lab
       });
 
       #region Enregistrer le service ZombieForcaster version 1
-
+      services.AddTransient<IZombieForecaster, ZombieForecaster>();
       #endregion
 
       #region Insérez les références à l'ensemble des services ThirdParty ici Version Séparément
@@ -52,7 +52,7 @@ namespace AppDependencyInject_Lab
       #endregion
 
       #region Injection des trois version du Middleware
-     
+
       #endregion
 
       services.AddControllersWithViews().AddRazorRuntimeCompilation();
