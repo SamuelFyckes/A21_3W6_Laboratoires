@@ -9,7 +9,7 @@ using Appl_TestsUnitaires;
 namespace Appl_TestsUnitaires_Tests_NU
 {
   [TestFixture]
-  public class FizzBuzz_Tests_v2
+  public class E1_FizzBuzz_Tests_v2
   {
     [Test]
     [TestCase(15, "FizzBuzz")]

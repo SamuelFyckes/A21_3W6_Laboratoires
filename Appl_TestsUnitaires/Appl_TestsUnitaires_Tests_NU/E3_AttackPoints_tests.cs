@@ -9,7 +9,7 @@ using Appl_TestsUnitaires;
 namespace Appl_TestsUnitaires_Tests_NU
 {
   [TestFixture]
-  class AttackPoints_tests
+  class E3_AttackPoints_tests
   {
     private E3_AttackPointsCalculator _zombieAttack;
     [SetUp]
